@@ -18,7 +18,6 @@ int main() {
     addTodoToManager(todoManager, todoOne);
     addTodoToManager(todoManager, todoTwo);
     addTodoToManager(todoManager, todoThree);
-    removeTodoFromManager(todoManager, "Learn english");
 
     printTodoManager(todoManager);
   
