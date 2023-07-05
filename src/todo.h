@@ -1,3 +1,5 @@
+#pragma once
+
 typedef struct {
     char *name;
     int status; /* 0 = todo, 1 = in proress, 2 = done */

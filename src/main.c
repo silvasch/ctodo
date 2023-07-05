@@ -1,13 +1,20 @@
 #include "todo.h"
+#include "todo_manager.h"
 
 int main() {
-    Todo *todo = createTodo("Learn maths");
-    addTagToTodo(todo, "school");
-    addTagToTodo(todo, "maths");
-    addTagToTodo(todo, "important");
-    removeTagFromTodo(todo, "maths");
+    Todo *todoOne = createTodo("Learn maths");
+    addTagToTodo(todoOne, "school");
+    addTagToTodo(todoOne, "maths");
 
-    printTodo(todo);
+    Todo *todoTwo = createTodo("Learn english");
+    addTagToTodo(todoTwo, "school");
+    addTagToTodo(todoTwo, "english");
 
+    TodoManager *todoManager = createTodoManager("Todos");
+    addTodoToManager(todoManager, todoOne);
+    addTodoToManager(todoManager, todoTwo);
+
+    printTodoManager(todoManager);
+  
     return 0;
 }
