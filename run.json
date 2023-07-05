@@ -1,0 +1,10 @@
+{
+    "run": {
+        "cmd": "just run",
+        "desc": "Run the project"
+    },
+    "build": {
+        "cmd": "just build",
+        "desc": "Build the project"
+    }
+}
