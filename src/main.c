@@ -10,9 +10,15 @@ int main() {
     addTagToTodo(todoTwo, "school");
     addTagToTodo(todoTwo, "english");
 
+    Todo *todoThree = createTodo("Learn french");
+    addTagToTodo(todoThree, "school");
+    addTagToTodo(todoThree, "french");
+
     TodoManager *todoManager = createTodoManager("Todos");
     addTodoToManager(todoManager, todoOne);
     addTodoToManager(todoManager, todoTwo);
+    addTodoToManager(todoManager, todoThree);
+    removeTodoFromManager(todoManager, "Learn english");
 
     printTodoManager(todoManager);
   

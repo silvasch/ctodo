@@ -22,6 +22,27 @@ void addTodoToManager(TodoManager *todoManager, Todo *todo) {
      todoManager->num_of_todos += 1;
 }
 
+void removeTodoFromManager(TodoManager *todoManager, char *name) {
+    Todo **new_todos = malloc(sizeof(Todo));
+    int new_num_of_todos = 0;
+    int removed_todo = 0;
+
+    for (int i = 0; i < todoManager->num_of_todos; i++) {
+        if (!strcmp(todoManager->todos[i]->name, name)) {
+            removed_todo = 1;
+        } else {
+            new_todos[new_num_of_todos] = malloc(sizeof(Todo));
+            memcpy(new_todos[new_num_of_todos], todoManager->todos[i], sizeof(Todo));
+            new_num_of_todos += 1;
+        }
+    }
+
+    if (removed_todo) {
+        memcpy(todoManager->todos, new_todos, sizeof(Todo) * new_num_of_todos);
+        todoManager->num_of_todos = new_num_of_todos;
+    }
+}
+
 void printTodoManager(TodoManager *todoManager) {
     for (int i = 0; i < todoManager->num_of_todos; i++) {
         printTodo(todoManager->todos[i]);

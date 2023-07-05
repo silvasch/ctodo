@@ -10,5 +10,6 @@ typedef struct {
 TodoManager *createTodoManager(char *name);
 
 void addTodoToManager(TodoManager *todoManager, Todo *todo);
+void removeTodoFromManager(TodoManager *todoManager, char *name);
 
 void printTodoManager(TodoManager *todoManager);
